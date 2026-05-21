@@ -216,19 +216,6 @@ src/
 
 ---
 
-## 📸 Screenshots
-
-### Home Page
-_Add screenshot here_
-
-### Itinerary Results
-_Add screenshot here_
-
-### Saved Trips
-_Add screenshot here_
-
----
-
 ## 📄 License
 
 MIT License
