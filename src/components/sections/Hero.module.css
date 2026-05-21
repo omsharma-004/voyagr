@@ -1,0 +1,200 @@
+/* src/components/sections/Hero.module.css */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slideshow */
+.slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform, opacity;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+  z-index: 1;
+}
+
+.overlayBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(13,13,13,0.6), transparent);
+  z-index: 1;
+}
+
+/* Hero content */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 var(--space-6);
+  padding-bottom: 180px;
+  max-width: 900px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: var(--space-5);
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold-light);
+  opacity: 0.6;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 9vw, 7.5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-6);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto var(--space-10);
+  letter-spacing: 0.01em;
+}
+
+/* Slide indicators */
+.indicators {
+  position: absolute;
+  bottom: 220px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.indicator {
+  width: 24px;
+  height: 2px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background var(--transition-base), width var(--transition-base);
+}
+
+.indicator.active {
+  background: var(--gold-light);
+  width: 40px;
+}
+
+/* Destination label */
+.destinationLabel {
+  position: absolute;
+  bottom: 240px;
+  right: var(--space-8);
+  z-index: 2;
+  text-align: right;
+}
+
+.destinationName {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.1em;
+}
+
+/* Scroll cue */
+.scrollCue {
+  position: absolute;
+  bottom: 200px;
+  left: var(--space-8);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0.5;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: var(--white);
+  transform-origin: top;
+}
+
+.scrollText {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  writing-mode: vertical-rl;
+}
+
+/* Search panel anchor */
+.searchAnchor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--space-10);
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-bottom: 240px;
+  }
+
+  .destinationLabel,
+  .scrollCue {
+    display: none;
+  }
+
+  .indicators {
+    bottom: 280px;
+  }
+}

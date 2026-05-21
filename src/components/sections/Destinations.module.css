@@ -1,0 +1,179 @@
+/* src/components/sections/Destinations.module.css */
+
+.section {
+  padding: var(--space-24) 0 var(--space-16);
+  overflow: hidden;
+}
+
+.header {
+  padding: 0 var(--space-6);
+  max-width: 1280px;
+  margin: 0 auto var(--space-10);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+/* Scroll track */
+.track {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-6) var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.card {
+  flex: 0 0 280px;
+  height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  scroll-snap-align: start;
+  background: var(--dark-card);
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.card:hover .cardImg {
+  transform: scale(1.07);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-card);
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .cardOverlay {
+  opacity: 1.2;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-5);
+}
+
+.cardCategory {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: var(--space-1);
+}
+
+.cardName {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+}
+
+.cardCountry {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.cardArrow {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(8px);
+}
+
+.card:hover .cardArrow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* India badge */
+.indiaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: rgba(255,153,51,0.2);
+  border: 1px solid rgba(255,153,51,0.4);
+  border-radius: var(--radius-full);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #ff9933;
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card {
+    flex: 0 0 240px;
+    height: 320px;
+  }
+}
